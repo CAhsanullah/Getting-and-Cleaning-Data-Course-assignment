@@ -63,11 +63,12 @@ merged <- rbind(test_data, train_data)
 rm(test_data, train_data)
 # install.packages("dplyr") if not previously installed
 library(dplyr)
+
 merged <- select(merged, -(2))
-#View(merged)
+View(merged)
 
 #arrange data set by subject and then activity levels
-#merged <- arrange(merged, subject, Activity_Label)
+merged <- arrange(merged, subject, Activity_Label)
 
 #install.packages("reshape2") if not previously installed
 library(reshape2)
