@@ -12,21 +12,21 @@ Experiments have been carried out with a group of 30 test subjects (volunteers).
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.”
 Attribute Information.
 For each record in the dataset it is provided:
-•	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-•	Triaxial Angular velocity from the gyroscope.
-•	A 561-feature vector with time and frequency domain variables.
-•	Its activity label.
-•	An identifier of the subject who carried out the experiment.
+  -	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+  -	Triaxial Angular velocity from the gyroscope.
+  -	A 561-feature vector with time and frequency domain variables.
+  -	Its activity label.
+  -	An identifier of the subject who carried out the experiment.
 
 # Files Used:
-•	features.txt
-•	activity_labels.txt
-•	subject_train.txt
-•	x_train.txt
-•	y_train.txt
-•	subject_test.txt
-•	x_test.txt
-•	y_test.txt
+  - features.txt
+  -	activity_labels.txt
+  -	subject_train.txt
+  -	x_train.txt
+  -	y_train.txt
+  -	subject_test.txt
+  -	x_test.txt
+  -	y_test.txt
 
 # Changes made 
 Parts of variable names were renames to make more readable:
