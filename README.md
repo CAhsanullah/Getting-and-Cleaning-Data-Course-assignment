@@ -61,9 +61,9 @@ merged <- rbind(test_data, train_data)
 
 #cleanup
 rm(test_data, train_data)
+
 # install.packages("dplyr") if not previously installed
 library(dplyr)
-
 merged <- select(merged, -(2))
 View(merged)
 
@@ -72,8 +72,8 @@ merged <- arrange(merged, subject, Activity_Label)
 
 #install.packages("reshape2") if not previously installed
 library(reshape2)
-#idenitfy rows of data
 
+#idenitfy rows of data
 id_labels = c("subject", "Activity_Label")
 data_labels =  setdiff(colnames(merged), id_labels)
 melt_data = melt(merged, id= id_labels, measure.vars = data_labels)
