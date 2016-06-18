@@ -23,6 +23,7 @@ Create one R script called run_analysis.R that does the following:
 14. Idenitfy rows of data
 15. Apply mean function to get average of dataset melt_data 
 16. Tidy variable names
+17. Write tidy data to file
 
 
 
