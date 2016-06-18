@@ -91,7 +91,8 @@ average_data.names <- gsub('BodyBody', 'Body', average_data.names)
 setnames(average_data, average_data.names)
 View(average_data)
 
-
+#write data to file
+write.csv(average_data, file = 'Cleaned data.csv')
 
 #other approach - did not work -setup blank datatable
 #new <- data.frame(matrix(NA,nrow = 1, ncol = ncol(merged) ))
