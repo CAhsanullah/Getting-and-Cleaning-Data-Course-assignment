@@ -80,7 +80,7 @@ melt_data = melt(merged, id= id_labels, measure.vars = data_labels)
 #apply mean function to get average of dataset melt_data 
 average_data = dcast(melt_data, subject + Activity_Label ~ variable, mean)
 
-View("average_data")
+View(average_data)
 
 
 
