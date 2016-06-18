@@ -93,6 +93,7 @@ View(average_data)
 
 #write data to file
 write.csv(average_data, file = 'Cleaned data.csv')
+write.table(average_data, file = 'Cleaned data.txt', row.names = FALSE)
 
 #other approach - did not work -setup blank datatable
 #new <- data.frame(matrix(NA,nrow = 1, ncol = ncol(merged) ))
