@@ -63,9 +63,8 @@ merged <- rbind(test_data, train_data)
 rm(test_data, train_data)
 
 # install.packages("dplyr") if not previously installed
-library(dplyr)\n
-merged <- select(merged, -(2))\n
-View(merged)
+library(dplyr) 
+merged <- select(merged, -(2))
 
 #arrange data set by subject and then activity levels
 merged <- arrange(merged, subject, Activity_Label)
@@ -81,7 +80,17 @@ melt_data = melt(merged, id= id_labels, measure.vars = data_labels)
 #apply mean function to get average of dataset melt_data 
 average_data = dcast(melt_data, subject + Activity_Label ~ variable, mean)
 
+# tidy variable names
+average_data.names <- names(average_data)
+average_data.names <- gsub('-mean', 'Mean', average_data.names)
+average_date.names <- gsub('-std', 'Std', average_data.names)
+average_data.names <- gsub('[()-]', '', average_data.names)
+average_data.names <- gsub('BodyBody', 'Body', average_data.names)
+setnames(average_data, average_data.names)
+
 View(average_data)
+
+
 
 
 
