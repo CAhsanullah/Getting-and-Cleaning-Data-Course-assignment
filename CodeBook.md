@@ -1,5 +1,4 @@
-Getting and Cleaning Data Course Project
-
+# Data:
 Description of variables, data and transformations used to clean up the data in assigned course project for the Johns Hopkins Getting and Cleaning Data Course.
 Source Data:
 A full description of the data used in this project can be found at:
@@ -19,14 +18,7 @@ For each record in the dataset it is provided:
 •	Its activity label.
 •	An identifier of the subject who carried out the experiment.
 
-
-Step 1. Merge the training and the test sets to create one data set.
-After setting the source directory for the files, Load activity labels:
-
-activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
-# Load: data column names
-
-features <- read.table("./UCI HAR Dataset/features.txt")[,2]
+# Files Used:
 •	features.txt
 •	activity_labels.txt
 •	subject_train.txt
@@ -36,42 +28,18 @@ features <- read.table("./UCI HAR Dataset/features.txt")[,2]
 •	x_test.txt
 •	y_test.txt
 
-Step 2. Extract only the measurements on the mean and standard deviation for each measurement.
-Extract only the measurements on the mean and standard deviation for each measurement.
-extract_features <- grepl("mean|std", features)
+# Changes made 
+Parts of variable names were renames to make more readable:
+The following text replacements were made:
+Replaced '-mean' with 'Mean' 
+Replaced '-std' with 'Std' 
+Removed '-()'
+Replaced 'BodyBody' with 'Body'
 
-Load and process X_test & y_test data.
-X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
-subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
-
-names (X_test) = features
-
-X_test <- X_test[,extract_features]
-
-Load activity labels
-y_test[,2] = activity_labels[y_test[,1]]
-names(y_test) = c("Activity_ID", "Activity_Label")
-names(subject_test) = "subject"
-
-Step 3. Use descriptive activity names to name the activities in the data set
-Merge data subset with the activity type table to include the descriptive activity names:
-Merge data sets
-merged <- rbind(test_data, train_data)
-
-Section 4. Appropriately label the data set with descriptive activity names.
-
-Section 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
-Produce only a data set with the average of each variable for each activity and subject:
-Loaded reshape2 pacakge:
-library(reshape2)
-
-Identify rows of data: 
-id_labels = c("subject", "Activity_Label")
-data_labels =  setdiff(colnames(merged), id_labels)
-melt_data = melt(merged, id= id_labels, measure.vars = data_labels)
-
-Apply mean function to get average of dataset melt_data:
-average_data = dcast(melt_data, subject + Activity_Label ~ variable, mean) 
+Examples: 
+  original: tBodyAcc-mean()-X
+  New: tBodyAccMeanX
+  original: tBodyAcc-std()-Z
+  News: tBodyAccStdZ
 
 
