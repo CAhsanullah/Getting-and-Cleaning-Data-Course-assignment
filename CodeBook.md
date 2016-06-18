@@ -32,10 +32,10 @@ For each record in the dataset it is provided:
 # Changes made 
 Parts of variable names were renames to make more readable:
   The following text replacements were made:
-    - Replaced '-mean' with 'Mean' 
-    - Replaced '-std' with 'Std' 
-    - Removed '-()'
-    - Replaced 'BodyBody' with 'Body'
+  - Replaced '-mean' with 'Mean' 
+  - Replaced '-std' with 'Std' 
+  - Removed '-()'
+  - Replaced 'BodyBody' with 'Body'
 
 #Examples: 
   - Original: tBodyAcc-mean()-X
