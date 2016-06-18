@@ -64,7 +64,6 @@ rm(test_data, train_data)
 
 # install.packages("dplyr") if not previously installed
 library(dplyr) 
-merged <- select(merged, -(2))
 
 #arrange data set by subject and then activity levels
 merged <- arrange(merged, subject, Activity_Label)
